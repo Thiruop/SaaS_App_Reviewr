@@ -36,7 +36,7 @@ export const CompanyFilter = async (req, res) => {
             const startDate = new Date(start_date);
             const endDate = new Date(end_date);
 
-            return itemDate >= startDate && itemDate <= endDate;
+            return itemDate >= startDate || itemDate <= endDate;
         });
 
         res.status(200).json(filteredData);
