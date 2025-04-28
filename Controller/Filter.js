@@ -15,12 +15,6 @@ export const CompanyFilter = async (req, res) => {
     try {
         const { company_name, start_date, end_date, source } = req.body;
 
-        if (!company_name || !start_date || !end_date || !source) {
-            return res.status(400).json({ 
-                message: "Missing required fields: company_name, start_date, end_date, and source are all required." 
-            });
-        }
-
         const data = JSON.parse(rawData);
 
         const filteredCompany = data.filter((item) => {
